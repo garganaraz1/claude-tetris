@@ -50,12 +50,16 @@ jobs:
                  gh issue comment ${{ github.event.issue.number }} --edit-last --body "..."
                - Si no existe, creá uno nuevo con:
                  gh issue comment ${{ github.event.issue.number }} --body "..."
-            5. El comentario debe tener este formato exacto (en español):
+            5. El comentario debe estar escrito en Markdown válido que GitHub
+               pueda renderizar correctamente (encabezados con `#`, negritas
+               con `**`, listas con `-`, bloques de código con backticks
+               cuando cites nombres de archivos o funciones, etc.), con este
+               formato exacto (en español):
 
                ## 🔍 Diagnóstico de Claude
                **Resumen**: <1-2 líneas del problema>
                **Causa probable**: <hipótesis basada en el código real>
-               **Archivos/funciones afectadas**: <ej. game.js: rotateCW(), clearLines()>
+               **Archivos/funciones afectadas**: <ej. `game.js`: `rotateCW()`, `clearLines()`>
                **Enfoque sugerido**: <a alto nivel, sin implementar el fix>
                **Labels asignados**: <lista>
           claude_args: |
